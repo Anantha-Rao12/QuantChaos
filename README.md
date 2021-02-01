@@ -2,13 +2,21 @@
 
 > Repository containing implementation of basic phenomena in Hamiltonian Chaos, Quantum Chaos and Localization
    
-~~~
+---
     
 ### To do 
 
 - [x] Classical One Dimensional Kicked rotor
 - [ ] Quantum 1D Kicked Rotor
 - [ ] Quantum 3D Kicked Rotor
-- [ ] Understand Localization in Quantum 3D Kicked rotor
+- [ ] Understand Many-Body Localization in Quantum 3D Kicked rotor
+- [ ] Understand Commutator Growth for Quantum 3D Kicked rotor
+
+---
+
+### References
+
+1. Hashimoto, K., Murata, K., & Yoshii, R. (2017). Out-of-time-order correlators in quantum mechanics. Journal of High Energy Physics, 2017(10), 138–169. https://doi.org/10.1007/jhep10(2017)138
+2. Lecture Notes on [Dynamic Localization of Kicked Rotor](https://boulderschool.yale.edu/sites/default/files/files/Delande-kicked_rotor_lectures_1_and_2.pdf) - Boulder School on Condensed Matter Physics
 
 
