@@ -8,7 +8,7 @@
 
 - [x] Classical One Dimensional Kicked rotor
 - [x] Quantum 1D Kicked Rotor
-- [ ] Quantum 3D Kicked Rotor
+- [x] Quantum 3D Kicked Rotor
 - [ ] Understand Many-Body Localization in Quantum 3D Kicked rotor
 - [ ] Understand Commutator Growth for Quantum 3D Kicked rotor
 
