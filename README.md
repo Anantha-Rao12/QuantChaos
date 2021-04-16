@@ -1,6 +1,6 @@
 # QuantChaos
 
-> Repository containing implementation of basic phenomena in Hamiltonian Chaos, Quantum Chaos and Localization
+* Repository containing implementation of basic phenomena in Hamiltonian Chaos, Quantum Chaos and Localization
    
 ---
     
@@ -11,8 +11,11 @@
 - [x] Quantum 3D Kicked Rotor
 - [ ] Understand Many-Body Localization in Quantum 3D Kicked rotor
 - [ ] Understand Commutator Growth for Quantum 3D Kicked rotor
-
 ---
+
+The completed notebooks are availble in .html format at `./html`. 
+
+Thank you!
 
 ### References
 
