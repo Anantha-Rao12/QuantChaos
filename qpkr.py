@@ -1,20 +1,16 @@
+import numpy as np
+
 class QPKR():
-  """Author: Anantha Rao
-  Date: 16 July 2022
-  Github id: @Anantha-Rao12
-  Desc: A python script to simulate the time-evolution of a quasi-periodic kicked rotor and determine the Anderson / metal-insulator transition in 3-dimensions
-  
-  References: 
-    1. https://arxiv.org/pdf/0904.2324.pdf
-    2. https://chaos.if.uj.edu.pl/~delande/Lectures/?quasiperiodic-kicked-rotor,63
-    3. http://phome.postech.ac.kr/user/ams/workshop_data/loc2011delande.pdf
-    4. https://verga.cpt.univ-mrs.fr/pages/kicked.html
-    """
 
     def __init__(self, basis_size:int, total_time:int, params:list):
         """
+        Author: Anantha Rao
+        Date: 16 July 2022
+        Github id: @Anantha-Rao12
+        Desc: A python script to simulate the time-evolution of a quasi-periodic kicked rotor and
+        determine the Anderson / metal-insulator transition in 3-dimensions
+        
         Creates a Quasi-periodic kicked rotor instance with initial parameters where
-
         H = p^2/2 + K(t)cos(x) \sum_n \delta(t-n)
         where K(t) = K0*(1+\eps \cos(w2t + phi2) \cos(w3t + phi3))
         
@@ -22,13 +18,19 @@ class QPKR():
             basis_size : int that describes the size of the position and momentum basis
             total_time : total time of time evolution
             Params : [K0, hbar, eps, w2, w3, phi2, phi3] where
-                K0: Kicking strength
-                hbar : effective planck's constant
-                eps : factor that modulates the additional temporal frequencies
-                w2, w3 : the two incommensurate frequencies
-                phi2, phi3 : initial phase factors
+            K0: Kicking strength
+            hbar : effective planck's constant
+            eps : factor that modulates the additional temporal frequencies
+            w2, w3 : the two incommensurate frequencies
+            phi2, phi3 : initial phase factors
 
-        """
+
+        References: 
+        1. https://arxiv.org/pdf/0904.2324.pdf
+        2. https://chaos.if.uj.edu.pl/~delande/Lectures/?quasiperiodic-kicked-rotor,63
+        3. http://phome.postech.ac.kr/user/ams/workshop_data/loc2011delande.pdf
+        4. https://verga.cpt.univ-mrs.fr/pages/kicked.html"""
+    
         self.basis_size = basis_size
         self.total_time = total_time
         self.K0 = params[0]
@@ -73,7 +75,7 @@ class QPKR():
             psi_t = np.fft.fft(Ux * np.fft.ifft (self.Up * psi_t))
             psi_vectors[:, t] = psi_t
             p2[t] = np.sum((self.p)**2 * (np.abs(psi_t)**2))
-        return p2
+        return p2, psi_t
 
     def get_avg_overphases(self, no_initconfigs:int) -> np.ndarray:
         """Get time-evolved energy averaged over multiple initial configurations
@@ -84,6 +86,7 @@ class QPKR():
 
         for idx, (phase1, phase2) in enumerate(zip(phases1, phases2)):
             self.phi2 = phase1; self.phi3 = phase2
-            all_p2[idx, :] = self.evolve()
-        
+            all_p2[idx, :], _ = self.evolve()
+
         return np.mean(all_p2, axis=0)
+
