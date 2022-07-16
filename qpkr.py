@@ -2,7 +2,14 @@ class QPKR():
   """Author: Anantha Rao
   Date: 16 July 2022
   Github id: @Anantha-Rao12
-  Desc: A python script to simulate the time-evolution of a quasi-periodic kicked rotor and determine the Anderson / metal-insulator transition in 3-dimensions"""
+  Desc: A python script to simulate the time-evolution of a quasi-periodic kicked rotor and determine the Anderson / metal-insulator transition in 3-dimensions
+  
+  References: 
+    1. https://arxiv.org/pdf/0904.2324.pdf
+    2. https://chaos.if.uj.edu.pl/~delande/Lectures/?quasiperiodic-kicked-rotor,63
+    3. http://phome.postech.ac.kr/user/ams/workshop_data/loc2011delande.pdf
+    4. https://verga.cpt.univ-mrs.fr/pages/kicked.html
+    """
 
     def __init__(self, basis_size:int, total_time:int, params:list):
         """
