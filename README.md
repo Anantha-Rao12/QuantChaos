@@ -11,6 +11,8 @@
 - [x] Quantum 3D Kicked Rotor
 - [ ] Understand Many-Body Localization in Quantum 3D Kicked rotor
 - [ ] Understand Commutator Growth for Quantum 3D Kicked rotor
+
+Notes to get acquaintef with the classical kicked rotor and the quantum kicked rotor are present `pdf-notes`
 ---
 
 The completed notebooks are availble in .html format at `./html`. 
